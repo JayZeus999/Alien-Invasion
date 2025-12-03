@@ -28,6 +28,8 @@ class AlienInvasion:
                 #Make the most recently drawn screen visible.
                 pygame.display.flip()
                 self.clock.tick(60)
+                # Redraw the screen during each pass through the loop
+                self.screen.fill(self.bg_color)
 
 
 if __name__ == "__main__":
