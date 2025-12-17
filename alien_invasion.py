@@ -27,6 +27,7 @@ class AlienInvasion:
             """Start the main loop for the game"""
             while True:
                 self._check_events()
+                self.rocket.update()
                 self.ship.update()
                 self._update_screen()
                 self.clock.tick(60)
@@ -49,9 +50,11 @@ class AlienInvasion:
         """Respond to keypresses."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
+            self.rocket.moving_right = True
 
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
+            self.rocket.moving_left = True
 
         elif event.key == pygame.K_q:
             sys.exit()
@@ -61,9 +64,11 @@ class AlienInvasion:
         """Respond to key releases."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
+            self.rocket.moving_right = False
 
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+            self.rocket.moving_left = False
 
 
     def _update_screen(self):

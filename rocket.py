@@ -20,6 +20,24 @@ class Rocket:
         # Get float value for x-position of rocket
         self.x = float(self.rect.x)
 
+        # Initial movement status of ship at x axis
+        self.moving_right = False
+        self.moving_left = False
+
+
+    def update(self):
+        """Update the rocket's location based on the movement flag."""
+
+        # Update the ship's x value, not the rect.
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.x += self.settings.rocket_speed
+        if self.moving_left and self.rect.left > 0:
+            self.x -= self.settings.rocket_speed
+
+
+        # Update self.rect from self.x
+        self.rect.x = self.x
+
 
     def blitme(self):
         """Draw the rocket at its current location."""
