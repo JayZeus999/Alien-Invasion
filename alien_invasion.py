@@ -44,16 +44,19 @@ class AlienInvasion:
 
 
     def check_keydown_events(self, event):
-        """Respond to key-down events."""
+        """Respond to keypresses."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
 
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
 
+        elif event.key == pygame.K_q:
+            sys.exit()
+
 
     def check_keyup_events(self, event):
-        """Respond to key-up events."""
+        """Respond to key releases."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
 
@@ -66,7 +69,6 @@ class AlienInvasion:
         # Redraw the screen during each pass through the loop
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme()
-        # self.ship.fill(self.ship.bg_color)
         self.character.blitme()
         #Make the most recently drawn screen visible.
         pygame.display.flip()
