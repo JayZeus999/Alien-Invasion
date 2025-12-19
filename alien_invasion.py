@@ -26,6 +26,8 @@ class AlienInvasion:
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
 
+        self._create_fleet()
+
 
     def run_game(self):
             """Start the main loop for the game"""
@@ -85,6 +87,13 @@ class AlienInvasion:
 
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+
+
+    def _create_fleet(self):
+        """Create a fleet of aliens."""
+        # Make an alien.
+        alien = Alien(self)
+        self.aliens.add(alien)
 
 
     def _update_bullets(self):
