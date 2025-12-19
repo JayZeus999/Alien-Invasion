@@ -11,7 +11,7 @@ class Sideways_Settings:
 
         # Bullet settings
         self.sideways_bullet_speed = 2.0
-        self.sideways_bullet_width = 3
-        self.sideways_bullet_height = 15
+        self.sideways_bullet_width = 15
+        self.sideways_bullet_height = 3
         self.sideways_bullet_color = (60, 60, 60)
         self.sideways_bullets_allowed = 3
