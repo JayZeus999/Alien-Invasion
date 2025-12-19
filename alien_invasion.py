@@ -116,6 +116,7 @@ class AlienInvasion:
             bullet.draw_bullet()
 
         self.ship.blitme()
+        self.aliens.draw(self.screen)
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
